@@ -11,6 +11,10 @@ import { NAV_DROPDOWN_DIRECTIVES } from './directive/nav-dropdown-toggle.directi
 import { SIDEBAR_TOGGLE_DIRECTIVES } from './directive/sidebar.directive';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ClientManageComponent } from './client-manage/client-manage.component';
+import { ArchitectManageComponent } from './architect-manage/architect-manage.component';
+import { SiteManageComponent } from './site-manage/site-manage.component';
+import { QuatationManageComponent } from './quatation-manage/quatation-manage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +25,10 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     APP_SIDEBAR_NAV,
     NAV_DROPDOWN_DIRECTIVES,
     SIDEBAR_TOGGLE_DIRECTIVES,
+    ClientManageComponent,
+    ArchitectManageComponent,
+    SiteManageComponent,
+    QuatationManageComponent,
   ],
   imports: [
     BrowserModule,
