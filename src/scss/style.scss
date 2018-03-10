@@ -20,3 +20,7 @@
 
 // Custom styles
 @import "custom";
+
+.sidebar .nav-dropdown.open > .nav-dropdown-items {
+    max-height: 1500px !important;
+}
