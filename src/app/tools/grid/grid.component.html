@@ -1,13 +1,25 @@
-<div class="row">
-    <div class="col-md-2 col-sm-2 col-xs-6">
-      <div class="form-group">
-          <select class="form-control">
+  <div class="float-left">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="form-group row">
+          <select [(ngModel)]="size" (change)="handleEvent()" class="form-control">
               <option>10</option>
               <option>20</option>
               <option>30</option>
               <option>40</option>
               <option>50</option>
             </select>
+      </div>
+    </div>
+  </div>
+  <div class="float-right">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="form-group row">
+        <div class="input-group">
+          <input class="form-control" (keyup)="search($event)" [(ngModel)]="keyword" id="input1-group2" name="input1-group2" placeholder="Search" type="text">
+          <span class="input-group-prepend">
+            <button class="btn btn-primary" type="button" (click)="handleEvent()"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -43,14 +55,27 @@
         <div *ngIf="column.type=='image'">
             <img [src]="viewImg(row[column.value])" [ngClass]="column.imgstyleclass" >
         </div>
+        <div class="template" *ngIf="column.type=='template'">
+          <ng-container *ngTemplateOutlet="column.value; context: { col: column, row: row }" ></ng-container>
+        </div>
       </td>
     </tr>
   </tbody>
 </table>
 <ul class="pagination float-right">
-  <li class="page-item"  [ngClass]="{disabled: page == 0}"><a class="page-link" href="#">Prev</a></li>
-  <li class="page-item" [ngClass]="{'active':page == page-1, 'hide':page <= 0 }">
-    <a class="page-link" href="#">1</a>
+  <li [ngClass]="{disabled:pager.currentPage === 1}">
+      <a (click)="setPage(1)">First</a>
   </li>
-  <li class="page-item" [ngClass]="{disabled: (pageIndex) == totalRows- 1}"><a class="page-link" href="#">Next</a></li>
+  <li [ngClass]="{disabled:pager.currentPage === 1}">
+      <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+  </li>
+  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+      <a (click)="setPage(page)">{{page}}</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <a (click)="setPage(pager.currentPage + 1)">Next</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <a (click)="setPage(pager.totalPages)">Last</a>
+  </li>
 </ul>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -18,7 +19,7 @@ import { QuatationManageComponent } from './quatation-manage/quatation-manage.co
 import { OrganizationManageComponent } from './organization-manage/organization-manage.component';
 import { GridComponent } from './tools/grid/grid.component';
 import { GridcolumnComponent } from './tools/gridcolumn/gridcolumn.component';
-
+import { PagerService } from './service/pager.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +41,11 @@ import { GridcolumnComponent } from './tools/gridcolumn/gridcolumn.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot()
   ],
-  providers: [],
+  providers: [PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

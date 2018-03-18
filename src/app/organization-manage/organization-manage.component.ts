@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './organization-manage.component.html'
 })
 export class OrganizationManageComponent implements OnInit {
-
+  isEdit: any = false;
   constructor() { }
 
   organization = [{
@@ -28,4 +28,20 @@ export class OrganizationManageComponent implements OnInit {
   ngOnInit() {
   }
 
+  addOrEditRecord() {
+    this.isEdit = true;
+  }
+
+  backRecord() {
+    this.isEdit = false;
+  }
+
+  helloWorld(row) {
+    console.log(row);
+    console.log('hello from comoinent');
+  }
+
+  handleGridEvent(data) {
+    console.log(data);
+  }
 }

@@ -1,13 +1,31 @@
-<div class="card">
+<div class="card" *ngIf="isEdit == false">
   <div class="card-header">
     <i class="fa fa-building"></i> Organization Management
+    <div class="float-right">
+      <button class="btn btn-success btn-sm" (click)="addOrEditRecord()"><i class="fa fa-plus"></i> Add</button>
+    </div>
   </div>
   <div class="card-body">
-    <app-grid [dataset]=organization>
-      <app-gridcolumn [width]="'10%'" [value]="'organizationImage'" [header]="'Logo'" [sorting]="false" [type]="'image'" [imgstyleclass]="'orgImage'"></app-gridcolumn>
-      <app-gridcolumn [width]="'25%'" [value]="'organizationName'" [header]="'Organization Name'" [sorting]="true" [type]="'text'"></app-gridcolumn>
-      <app-gridcolumn [width]="'25%'" [value]="'organizationEmail'" [header]="'Organization Email'" [sorting]="true" [type]="'text'"></app-gridcolumn>
-      <app-gridcolumn [width]="'25%'" [value]="'organizationContact'" [header]="'Organization Contact'" [sorting]="true" [type]="'text'"></app-gridcolumn>
+    <app-grid [dataset]=organization [rows]=300 (handler)="handleGridEvent($event)">
+        <app-gridcolumn [width]="'25%'" [value]="'organizationName'" [header]="'Name'" [sorting]="true" [type]="'text'"></app-gridcolumn>
+      <app-gridcolumn [width]="'25%'" [value]="'organizationEmail'" [header]="'Email'" [sorting]="true" [type]="'text'"></app-gridcolumn>
+      <app-gridcolumn [width]="'25%'" [value]="'organizationContact'" [header]="'Contact'" [sorting]="true" [type]="'text'"></app-gridcolumn>
+      <app-gridcolumn [width]="'25%'" [value]="greet" [header]="'Action'" [sorting]="false" [type]="'template'">
+        <ng-template #greet  let-col="col" let-row="row">
+          <button (click)="helloWorld(row)" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></button>
+        </ng-template>
+      </app-gridcolumn>
     </app-grid>
+  </div>  
+</div>
+<div class="card" *ngIf="isEdit == true">
+  <div class="card-header">
+    <i class="fa fa-building"></i> Add Organization Management
+    <div class="float-right">
+      <button class="btn btn-primary btn-sm" (click)="backRecord()"><i class="fa fa-arrow-left"></i> Back</button>
+    </div>
   </div>
+  <div class="card-body">
+    
+  </div>  
 </div>
