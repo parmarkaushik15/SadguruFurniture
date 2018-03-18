@@ -8,6 +8,7 @@ import { ArchitectManageComponent } from './architect-manage/architect-manage.co
 import { SiteManageComponent } from './site-manage/site-manage.component';
 import { QuatationManageComponent } from './quatation-manage/quatation-manage.component';
 import { OrganizationManageComponent } from './organization-manage/organization-manage.component';
+import { WorkerManageComponent } from './worker-manage/worker-manage.component';
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
@@ -32,6 +33,9 @@ const routes: Routes = [
       }, {
         path: 'manage/organization',
         component: OrganizationManageComponent
+      }, {
+        path: 'user/worker',
+        component: WorkerManageComponent
       }
     ]}
 ];

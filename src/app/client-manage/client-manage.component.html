@@ -1,6 +1,6 @@
 <div class="card" *ngIf="isEdit == false">
   <div class="card-header">
-    <i class="fa fa-building"></i> Client Management
+    <i class="fa fa-users"></i> Client Management
     <div class="float-right">
       <button class="btn btn-success btn-sm" (click)="addOrEditRecord()"><i class="fa fa-plus"></i> Add</button>
     </div>
@@ -20,12 +20,104 @@
 </div>
 <div class="card" *ngIf="isEdit == true">
   <div class="card-header">
-    <i class="fa fa-building"></i> Add Client Management
+    <i class="fa fa-users"></i> Add Client Management
     <div class="float-right">
       <button class="btn btn-primary btn-sm" (click)="backRecord()"><i class="fa fa-arrow-left"></i> Back</button>
     </div>
   </div>
   <div class="card-body">
-    
-  </div>  
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">First name</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your first name">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Last name</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Contact Number</label>
+          <input type="text" class="form-control" id="contactnumber" name="contactnumber" placeholder="Enter your contact number">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Alternate Contact Number</label>
+          <input type="text" class="form-control" id="alternatecontactnumber" name="alternatecontactnumber" placeholder="Enter your alternate contact number">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="name">Address</label>
+          <textarea id="address" name="address" rows="4" class="form-control" placeholder="Address.."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Country</label>
+          <select id="country" name="country" class="form-control">
+            <option value="0">Please select country</option>
+            <option value="1">India</option>
+            <option value="2">Pakistan</option>
+            <option value="3">USA</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">State</label>
+          <select id="state" name="state" class="form-control">
+            <option value="0">Please select state</option>
+            <option value="1">Gujarat</option>
+            <option value="2">Maharashtra</option>
+            <option value="3">Punjab</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">City</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Pincode</label>
+          <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter your pincode">
+        </div>
+      </div>
+    </div>
+
+
+  </div> 
+  <div class="card-footer">
+    <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+    <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+  </div> 
 </div>

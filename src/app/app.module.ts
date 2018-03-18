@@ -20,6 +20,7 @@ import { OrganizationManageComponent } from './organization-manage/organization-
 import { GridComponent } from './tools/grid/grid.component';
 import { GridcolumnComponent } from './tools/gridcolumn/gridcolumn.component';
 import { PagerService } from './service/pager.service';
+import { WorkerManageComponent } from './worker-manage/worker-manage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { PagerService } from './service/pager.service';
     QuatationManageComponent,
     OrganizationManageComponent,
     GridComponent,
-    GridcolumnComponent
+    GridcolumnComponent,
+    WorkerManageComponent
   ],
   imports: [
     BrowserModule,

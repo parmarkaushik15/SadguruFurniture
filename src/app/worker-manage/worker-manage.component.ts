@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-architect-manage',
-  templateUrl: './architect-manage.component.html'
+  selector: 'app-worker-manage',
+  templateUrl: './worker-manage.component.html'
 })
-export class ArchitectManageComponent implements OnInit {
+export class WorkerManageComponent implements OnInit {
   isEdit: any = false;
   organization = [{
     'organizationName': 'Organization 1',
@@ -43,5 +43,6 @@ export class ArchitectManageComponent implements OnInit {
     console.log(data);
   }
   constructor() { }
+
 
 }
