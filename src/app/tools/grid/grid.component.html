@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-2 col-sm-2 col-xs-6">
+      <div class="form-group">
+          <select class="form-control">
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>40</option>
+              <option>50</option>
+            </select>
+      </div>
+    </div>
+  </div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns" [style.width]="column.width">
+       <span *ngIf="!column.sorting">{{column.header}}</span>
+       <span *ngIf="column.sorting && !(sortColumn == column.value)" style="cursor:pointer;" (click)="onSort(column.value, 1)">
+           {{column.header}}
+           <i class="fa fa-fw fa-sort"></i>
+       </span> 
+       <span *ngIf="column.sorting && sortColumn == column.value && sortDirection == -1" 
+           style="cursor:pointer;" (click)="onSort(column.value, 1)">
+           {{column.header}}
+           <i class="fa fa-fw fa-sort-desc"></i>
+       </span>
+       <span *ngIf="column.sorting && sortColumn == column.value && sortDirection == 1" 
+       style="cursor:pointer;" (click)="onSort(column.value, -1)">
+           {{column.header}}
+           <i class="fa fa-fw fa-sort-asc"></i>
+       </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i = index;let row of dataset">
+      <td *ngFor="let column of columns;">
+        <div *ngIf="column.type=='text'">  
+          <div *ngIf="row[column.value] != '' || row[column.value] != null || row[column.value] != 'null' || row[column.value] != 'undefined' || row[column.value] != undefined">{{row[column.value]}}</div>
+          <div *ngIf="row[column.value] == '' || row[column.value] == null || row[column.value] == 'null' || row[column.value] == 'undefined' || row[column.value] == undefined"></div>
+        </div>
+        <div *ngIf="column.type=='image'">
+            <img [src]="viewImg(row[column.value])" [ngClass]="column.imgstyleclass" >
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination float-right">
+  <li class="page-item"  [ngClass]="{disabled: page == 0}"><a class="page-link" href="#">Prev</a></li>
+  <li class="page-item" [ngClass]="{'active':page == page-1, 'hide':page <= 0 }">
+    <a class="page-link" href="#">1</a>
+  </li>
+  <li class="page-item" [ngClass]="{disabled: (pageIndex) == totalRows- 1}"><a class="page-link" href="#">Next</a></li>
+</ul>

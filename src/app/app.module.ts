@@ -15,6 +15,10 @@ import { ClientManageComponent } from './client-manage/client-manage.component';
 import { ArchitectManageComponent } from './architect-manage/architect-manage.component';
 import { SiteManageComponent } from './site-manage/site-manage.component';
 import { QuatationManageComponent } from './quatation-manage/quatation-manage.component';
+import { OrganizationManageComponent } from './organization-manage/organization-manage.component';
+import { GridComponent } from './tools/grid/grid.component';
+import { GridcolumnComponent } from './tools/gridcolumn/gridcolumn.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +33,9 @@ import { QuatationManageComponent } from './quatation-manage/quatation-manage.co
     ArchitectManageComponent,
     SiteManageComponent,
     QuatationManageComponent,
+    OrganizationManageComponent,
+    GridComponent,
+    GridcolumnComponent
   ],
   imports: [
     BrowserModule,

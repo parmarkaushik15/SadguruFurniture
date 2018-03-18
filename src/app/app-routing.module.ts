@@ -7,6 +7,7 @@ import { ClientManageComponent } from './client-manage/client-manage.component';
 import { ArchitectManageComponent } from './architect-manage/architect-manage.component';
 import { SiteManageComponent } from './site-manage/site-manage.component';
 import { QuatationManageComponent } from './quatation-manage/quatation-manage.component';
+import { OrganizationManageComponent } from './organization-manage/organization-manage.component';
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
@@ -28,6 +29,9 @@ const routes: Routes = [
       }, {
         path: 'work/quatation',
         component: QuatationManageComponent
+      }, {
+        path: 'manage/organization',
+        component: OrganizationManageComponent
       }
     ]}
 ];
